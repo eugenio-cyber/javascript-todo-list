@@ -6,14 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/icones/list.png">
     <title>Todo List</title>
 </head>
 
 <body>
 
+    <header>
+        <h2> Todo List </h2>
+        <h4> Organize suas tarefas </h4>
+    </header>
 
+    <main>
+        <section class="todo_newItem">
+            
+            <input type="text" placeholder="Escreva aqui sua nova tarefa" id="adicionar">
+            <input type="button" value="+">
+            
+        </section>
+
+        <section class="todo_list">
+
+            <div class="todo_item">
+                <input type="checkbox">
+                <h5> Arrumar o quarto </h5>
+                <input type="button" value="X">
+            </div>
+
+        </section>
+    </main>
     
-    <script src="todoList.js"></script>
+    <script src="/js/todoList.js"></script>
 
 </body>
 

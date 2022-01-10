@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color1: #73c3f9;
+    --color2: #deeeff;
+    --color3: #ff7186;
+    --color4: #543e5b;
+    --color5: #ffdd40;
+}
+
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--color4);
+    font-weight: 800;
+    font-size: 48px;
+}
+
+h4 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--color4);
+    font-weight: 600;
+    font-size: 24px;
+}
+
+h5 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--color4);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color2);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30vh;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vh;
+    max-height: 70vh;
+    width: 40vw;
+}
+
+.todo_newItem {
+    display: flex;
+    flex-direction: row;
+    height: 6vh;
+    width: 100%;
+}
+
+.todo_newItem #adicionar{
+    width: 90%;
+}
+
+.todo_newItem input{
+    width: 10%;
+}
+
+.todo_list {
+    background: var(--color3);
+    height: 6vh;
+    width: 100%;
+}
+
+.todo_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.todo_item  input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6%;
+    height: 50%;
+}
+
+@media(max-width: 767px) {
+    main {
+        width: 80vw;
+    }
+}
