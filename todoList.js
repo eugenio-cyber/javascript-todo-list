@@ -1,6 +1,3 @@
-
-// let banco = [];
-
 const receberTarefas = () => JSON.parse(localStorage.getItem ('todo')) ?? [];
 const enviarTarefas = (banco) => localStorage.setItem('todo', JSON.stringify(banco));
 
@@ -9,9 +6,12 @@ const criarTarefa = (tarefa, situacao, indice) => {
     div.classList.add('item');
 
     div.innerHTML = `
-        <input type="checkbox" ${situacao} data-indice=${indice}>
+        <input type="checkbox" data-indice=${indice} ${situacao}>
         <h5> ${tarefa} </h5>
+        <div class="btn">
+        <input id="edit" type="button" value="Editar">
         <input id="deny" type="button" value="Excluir" data-indice=${indice}>
+        </div>
     `
     document.getElementById('listasTarefas').appendChild(div);
 }
@@ -19,18 +19,19 @@ const criarTarefa = (tarefa, situacao, indice) => {
 const adicionar = (e) => {
 
     const texto = e.target.value;
-
-    if(texto == '') {
-        alert('Você não digitou a tarefa')
-    } else {
-        if(e.key === 'Enter') {
+    
+    if(e.key === 'Enter') {
+        if(texto != '') {
             const banco = receberTarefas();
             banco.push ({'tarefa': texto, 'status': ''});
             enviarTarefas(banco);
             e.target.value = '';
             atualizar();
+        } else {
+            alert('Você não digitou a tarefa')
         }
     }
+    
 }
 
 const adicionarBtn = (e) => {
@@ -43,9 +44,9 @@ const adicionarBtn = (e) => {
         enviarTarefas(banco);
         document.getElementById('adicionar').value = '';
         atualizar();
-    } else [
+    } else {
         alert('Você não digitou a tarefa')
-    ]
+    }
     
 }
 
@@ -66,12 +67,16 @@ const tarefaClicada = (e) => {
     
     const elemnto = e.target;
 
-    if(e.target.type === 'button') {
+    if(e.target.id === 'deny') {
         const indice = elemnto.dataset.indice;
         remover(indice);
     } else if(e.target.type === 'checkbox') {
         const indice = elemnto.dataset.indice;
         adicionarItem(indice);
+    } else if(e.target.id === 'edit') {
+        let texto = e.target.parentNode.parentNode.textContent;
+        let novoTexto = prompt('Digite o novo nome para tarefa')
+        editarItem(texto, novoTexto)
     }
 }
 
@@ -87,6 +92,13 @@ const remover = (indice) => {
     banco.splice(indice, 1);
     enviarTarefas(banco);
     atualizar();
+}
+
+const editarItem = (texto, novoTexto) => {
+    const banco = receberTarefas();
+    banco.forEach(
+        (item, indice) 
+    )
 }
 
 document.getElementById('adicionar').addEventListener('keypress', adicionar);
