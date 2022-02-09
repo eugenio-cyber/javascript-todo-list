@@ -57,6 +57,10 @@ input[type="button"] {
   cursor: pointer;
 }
 
+.item > input[type="checkbox"]:checked + h5 {
+  text-decoration: line-through;
+}
+
 section {
   text-align: center;
   display: flex;
@@ -73,6 +77,7 @@ section {
 
 #novoItem input {
   width: 90%;
+  font-size: 16px;
 }
 
 #novoItem button {
@@ -107,6 +112,5 @@ section {
 
 @media (max-width: 767px) {
   body {
-    background: red;
   }
 }
