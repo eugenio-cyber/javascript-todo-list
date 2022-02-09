@@ -13,7 +13,7 @@
 <body>
     
     <main>
-        <section>
+        <section id="topoTarefas">
             <h2> Todo List </h2>
             <h4> Organize suas Tarefas </h4>
             <div id="novoItem">
@@ -21,9 +21,19 @@
                 <button id="btnAdd"> + </button>
             </div>
         </section>
-        <section class="todo__list" id="listasTarefas">
+        
+        <section id="listaTarefas">
 
         </section>
+
+        <div class="modal-aviso" id="modal-countainer">
+            <div id="modal">
+                <div id="modal-header">
+                    <button id="modal-btn">X</button>    
+                </div>
+                <span>Você não digitou a tarefa</span>    
+            </div>
+        </div>
     </main>
 
     <script src="todoList.js"></script>

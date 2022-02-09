@@ -14,7 +14,7 @@ const criarTarefa = (tarefa, situacao, indice) => {
         <input id="deny" type="button" value="Excluir" data-indice=${indice}>
         </div>
     `;
-  document.getElementById("listasTarefas").appendChild(div);
+  document.getElementById("listaTarefas").appendChild(div);
 };
 
 const adicionar = (e) => {
@@ -23,12 +23,12 @@ const adicionar = (e) => {
   if (e.key === "Enter") {
     if (texto != "") {
       const banco = receberTarefas();
-      banco.push({ tarefa: texto, status: "" });
+      banco.push({ tarefa: texto, situacao: "" });
       enviarTarefas(banco);
       e.target.value = "";
       atualizar();
     } else {
-      alert("Você não digitou a tarefa");
+      iniciaModal("modal-countainer");
     }
   }
 };
@@ -38,17 +38,17 @@ const adicionarBtn = (e) => {
 
   if (texto != "") {
     const banco = receberTarefas();
-    banco.push({ tarefa: texto, status: "" });
+    banco.push({ tarefa: texto, situacao: "" });
     enviarTarefas(banco);
     document.getElementById("adicionar").value = "";
     atualizar();
   } else {
-    alert("Você não digitou a tarefa");
+    iniciaModal("modal-countainer");
   }
 };
 
 const limpar = () => {
-  const todo = document.getElementById("listasTarefas");
+  const todo = document.getElementById("listaTarefas");
   while (todo.firstChild) {
     todo.removeChild(todo.lastChild);
   }
@@ -103,10 +103,21 @@ const editarItem = (texto, novoTexto) => {
   atualizar();
 };
 
+const iniciaModal = (modalId) => {
+  const modal = document.getElementById(modalId);
+  modal.classList.add("mostrar");
+
+  modal.addEventListener("click", (e) => {
+    if (e.target.id === "modal-btn") {
+      modal.classList.remove("mostrar");
+    }
+  });
+};
+
 document.getElementById("adicionar").addEventListener("keypress", adicionar);
 document.getElementById("btnAdd").addEventListener("click", adicionarBtn);
 document
-  .getElementById("listasTarefas")
+  .getElementById("listaTarefas")
   .addEventListener("click", tarefaClicada);
 
 atualizar();
