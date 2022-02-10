@@ -28,7 +28,7 @@ const adicionar = (e) => {
       e.target.value = "";
       atualizar();
     } else {
-      iniciaModal("modal-countainer");
+      iniciaModalAviso("modal-aviso");
     }
   }
 };
@@ -43,7 +43,7 @@ const adicionarBtn = (e) => {
     document.getElementById("adicionar").value = "";
     atualizar();
   } else {
-    iniciaModal("modal-countainer");
+    iniciaModalAviso("modal-aviso");
   }
 };
 
@@ -73,8 +73,7 @@ const tarefaClicada = (e) => {
     adicionarItem(indice);
   } else if (e.target.id === "edit") {
     let texto = elemnto.dataset.indice;
-    let novoTexto = prompt("Digite o novo nome para tarefa");
-    editarItem(texto, novoTexto);
+    iniciaModalEditar("modal-editar", texto);
   }
 };
 
@@ -103,12 +102,32 @@ const editarItem = (texto, novoTexto) => {
   atualizar();
 };
 
-const iniciaModal = (modalId) => {
+const iniciaModalAviso = (modalId) => {
   const modal = document.getElementById(modalId);
   modal.classList.add("mostrar");
 
   modal.addEventListener("click", (e) => {
     if (e.target.id === "modal-btn") {
+      modal.classList.remove("mostrar");
+    }
+  });
+};
+
+const iniciaModalEditar = (modalId, texto) => {
+  const modal = document.getElementById(modalId);
+  let resposta;
+
+  modal.classList.add("mostrar");
+
+  modal.addEventListener("click", (e) => {
+    if (e.target.id === "modal-btn-confirm") {
+      if (document.getElementById("modal-editar-input").value !== "") {
+        resposta = document.getElementById("modal-editar-input").value;
+        document.getElementById("modal-editar-input").value = "";
+        editarItem(texto, resposta);
+      }
+      modal.classList.remove("mostrar");
+    } else if (e.target.id === "modal-btn-deny") {
       modal.classList.remove("mostrar");
     }
   });

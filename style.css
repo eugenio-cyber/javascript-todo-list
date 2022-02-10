@@ -9,6 +9,8 @@
   --color2: #92a9bd;
   --color3: #7c99ac;
   --color4: #ffefef;
+  --color5: #b22222;
+  --color6: #483d8b;
 }
 
 body {
@@ -19,12 +21,6 @@ body {
 button {
   cursor: pointer;
   border: none;
-  background: var(--color3);
-}
-
-button:hover {
-  transition: 0.3s;
-  background: var(--color2);
 }
 
 input {
@@ -55,7 +51,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  min-height: 100vh;
+  max-width: 1920px;
 }
 
 #topoTarefas {
@@ -77,10 +73,16 @@ main {
 #novoItem button {
   width: 10%;
   color: var(--color4);
+  background: var(--color3);
 }
 
-#listaTarefas:last-child {
-  margin-bottom: 16px;
+#novoItem button:hover {
+  transition: 0.3s;
+  background: var(--color2);
+}
+
+.item:last-child {
+  margin-bottom: 20px;
 }
 
 #listaTarefas {
@@ -120,7 +122,7 @@ main {
   padding: 2px;
 }
 
-.modal-aviso {
+#modal-aviso {
   display: none;
   width: 100vw;
   height: 100vh;
@@ -132,11 +134,11 @@ main {
   justify-content: center;
 }
 
-.modal-aviso.mostrar {
+#modal-aviso.mostrar {
   display: flex;
 }
 
-#modal {
+#modal-aviso-body {
   width: 240px;
   height: 50px;
   background: var(--color3);
@@ -144,22 +146,75 @@ main {
   text-align: center;
 }
 
-#modal-header {
+#modal-aviso-header {
   display: flex;
   justify-content: flex-end;
 }
 
-#modal-header button {
+#modal-aviso-header button {
   background: var(--color4);
   border-radius: 8px;
   padding: 4px 8px;
 }
 
-#modal span {
+#modal-aviso-body span {
   color: var(--color4);
 }
 
-@keyframes modal {
+.mostrar #modal {
+  animation: modalAviso 0.3s;
+}
+
+#modal-editar {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgb(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+#modal-editar-body {
+  background: var(--color1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 500px;
+  padding: 16px;
+  border-radius: 5px;
+}
+
+#modal-editar-body input {
+  height: 26px;
+  font-size: 14px;
+}
+
+#modal-editar-btn {
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+}
+
+#modal-btn-confirm {
+  padding: 4px 18px;
+  background: var(--color3);
+  border-radius: 5px;
+}
+
+#modal-btn-deny {
+  padding: 4px 18px;
+  background: var(--color5);
+  border-radius: 5px;
+}
+
+#modal-editar.mostrar {
+  display: flex;
+}
+
+@keyframes modalAviso {
   from {
     opacity: 0;
     transform: translate3d(0, -60px, 0);
@@ -170,11 +225,22 @@ main {
   }
 }
 
-.mostrar #modal {
-  animation: modal 0.3s;
-}
-
 @media (max-width: 767px) {
-  body {
+  h2 {
+    font-weight: 800;
+    font-size: 36px;
+  }
+
+  h4 {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  #topoTarefas {
+    width: 85%;
+  }
+
+  #listaTarefas {
+    width: 90%;
   }
 }

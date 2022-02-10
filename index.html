@@ -26,12 +26,23 @@
 
         </section>
 
-        <div class="modal-aviso" id="modal-countainer">
-            <div id="modal">
-                <div id="modal-header">
+        <div id="modal-aviso" class="modal-countainer">
+            <div id="modal-aviso-body">
+                <div id="modal-aviso-header">
                     <button id="modal-btn">X</button>    
                 </div>
                 <span>Você não digitou a tarefa</span>    
+            </div>
+        </div>
+
+        <div id="modal-editar" class="modal-countainer">
+            <div id="modal-editar-body">
+                <span>Digite o novo nome para a tarefa:</span>
+                <input type="text" id="modal-editar-input">
+                <div id="modal-editar-btn">
+                    <button id="modal-btn-confirm">Ok</button>
+                    <button id="modal-btn-deny">Cancelar</button>
+                </div>
             </div>
         </div>
     </main>
