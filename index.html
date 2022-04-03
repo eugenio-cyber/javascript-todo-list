@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylecut icon" href="list.png">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylecut icon" href="list.png" />
+    <link rel="stylesheet" href="style.css" />
     <title>Todo List</title>
-</head>
+  </head>
 
-<body>
-    
+  <body>
     <main>
-        <section id="topoTarefas">
-            <h2> Todo List </h2>
-            <h4> Organize suas Tarefas </h4>
-            <div id="novoItem">
-                <input type="text" placeholder="Digite sua nova tarefa aqui" id="adicionar">
-                <button id="btnAdd"> + </button>
-            </div>
-        </section>
-        
-        <section id="listaTarefas">
-
-        </section>
-
-        <div id="modal-aviso" class="modal-countainer">
-            <div id="modal-aviso-body">
-                <div id="modal-aviso-header">
-                    <button id="modal-btn">X</button>    
-                </div>
-                <span>Você não digitou a tarefa</span>    
-            </div>
+      <section class="topoTarefas">
+        <h2>Todo List</h2>
+        <h4>Organize suas Tarefas</h4>
+        <div id="novoItem">
+          <input
+            type="text"
+            placeholder="Digite sua nova tarefa aqui"
+            id="adicionar"
+          />
+          <button id="btnAdd">+</button>
         </div>
+      </section>
 
-        <div id="modal-editar" class="modal-countainer">
-            <div id="modal-editar-body">
-                <span>Digite o novo nome para a tarefa:</span>
-                <input type="text" id="modal-editar-input">
-                <div id="modal-editar-btn">
-                    <button id="modal-btn-confirm">Ok</button>
-                    <button id="modal-btn-deny">Cancelar</button>
-                </div>
-            </div>
+      <section id="listaTarefas"></section>
+
+      <div id="modal-aviso" class="modal-countainer">
+        <div id="modal-aviso-body">
+          <div id="modal-aviso-header">
+            <button id="modal-btn">X</button>
+          </div>
+          <span>Você não digitou a tarefa</span>
         </div>
+      </div>
+
+      <div id="modal-editar" class="modal-countainer">
+        <div id="modal-editar-body">
+          <span>Digite o novo nome para a tarefa:</span>
+          <input type="text" id="modal-editar-input" />
+          <div id="modal-editar-btn">
+            <button id="modal-btn-confirm">Ok</button>
+            <button id="modal-btn-deny">Cancelar</button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <script src="todoList.js"></script>
-</body>
-
+  </body>
 </html>

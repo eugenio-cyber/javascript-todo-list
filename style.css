@@ -14,8 +14,8 @@
 }
 
 body {
-  background: var(--color1);
   font-family: "Trebuchet MS", sans-serif;
+  background: var(--color1);
 }
 
 button {
@@ -51,10 +51,11 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  margin-top: 70px;
   max-width: 1920px;
 }
 
-#topoTarefas {
+.topoTarefas {
   text-align: center;
   width: 50vw;
 }
@@ -236,7 +237,7 @@ main {
     font-size: 24px;
   }
 
-  #topoTarefas {
+  .topoTarefas {
     width: 85%;
   }
 
