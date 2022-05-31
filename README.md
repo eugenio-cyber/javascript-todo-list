@@ -10,11 +10,11 @@
 
 ## 🔗 Quer acessar o projeto?
 
-[Clique aqui para ver](https://eugenio-cyber.github.io/cubos-flix-api/)
+[Clique aqui para ver]()
 
 ## 🏹 Qual o objetivo do projeto?
 
-Tem o objetivo de mostrar os projetos que desenvolvo durante minha jornada como dev.
+Em desenvolvimento.
 
 ## 💻 Como usar?
 
