@@ -4,27 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylecut icon" href="list.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylecut icon" href="./assets/list.png" />
     <link rel="stylesheet" href="style.css" />
+    <script src="todoList.js" defer></script>
     <title>Todo List</title>
   </head>
 
   <body>
-    <main>
-      <section class="topoTarefas">
-        <h2>Todo List</h2>
-        <h4>Organize suas Tarefas</h4>
-        <div id="novoItem">
+    <div class="container">
+      <div class="img-background"></div>
+      <main class="todo">
+        <section class="todo__top">
+          <h1 class="todo__title cursor-pointer">Todo</h1>
+          <img
+            class="cursor-pointer"
+            src="assets/moon-light.png"
+            alt="Ícone do tema"
+          />
+        </section>
+        <button class="todo__add">
+          <img src="assets/btn-add.png" alt="" />
           <input
             type="text"
             placeholder="Digite sua nova tarefa aqui"
             id="adicionar"
           />
-          <button id="btnAdd">+</button>
-        </div>
-      </section>
+        </button>
 
-      <section id="listaTarefas"></section>
+        <section id="listaTarefas"></section>
+      </main>
 
       <div id="modal-aviso" class="modal-countainer">
         <div id="modal-aviso-body">
@@ -45,8 +58,6 @@
           </div>
         </div>
       </div>
-    </main>
-
-    <script src="todoList.js"></script>
+    </div>
   </body>
 </html>
