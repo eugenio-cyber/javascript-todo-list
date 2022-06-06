@@ -5,14 +5,7 @@
 }
 
 :root {
-  --color1: #d3dedc;
-  --color2: #92a9bd;
-  --color3: #7c99ac;
-  --color4: #ffefef;
-  --color5: #b22222;
-  --color6: #483d8b;
-  --txt-white: #ffffff;
-  --txt-black: #000000;
+  --txt: #484749;
   --bg-white-card: #fafafa;
   --bg-white-page: #ffffff;
   --bg-dark-page: #161722;
@@ -25,6 +18,10 @@
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
 }
 
 input[type="button"] {
@@ -51,12 +48,11 @@ input[type="button"] {
 
 .todo {
   position: absolute;
-  top: 80px;
+  top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 770px;
-  background: #483d8b;
+  width: 750px;
 }
 
 .todo__top {
@@ -65,7 +61,6 @@ input[type="button"] {
   align-items: center;
   width: 100%;
   margin-bottom: 30px;
-  background: #b22222;
 }
 
 .todo__title {
@@ -73,48 +68,65 @@ input[type="button"] {
   font-size: 58px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--txt-white);
+  color: #ffffff;
+}
+
+.todo__text {
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--txt);
 }
 
 .todo__add {
-  /* width: 100%; */
-  background: green;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 10px 15px;
+  margin-bottom: 30px;
+  border-radius: 3px;
+  background: var(--bg-white-card);
 }
 
-.item:last-child {
-  margin-bottom: 20px;
+.todo__add img {
+  margin-right: 20px;
 }
 
-#listaTarefas {
+.todo__add input {
+  width: 100%;
+  height: 100%;
+}
+
+.todo__list {
   display: flex;
   flex-direction: column;
-  width: 60vw;
-  gap: 14px;
+  width: 100%;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .item {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  height: 40px;
-  justify-content: space-between;
-  padding: 0 10px;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding: 10px 15px;
   border-radius: 3px;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  background: var(--bg-white-page);
+  border-bottom: 1px solid #a7a6ab;
+  background: var(--bg-white-card);
 }
 
 .item > input[type="checkbox"]:checked + h5 {
   text-decoration: line-through;
 }
 
-#deny {
+.btn-deny {
   padding: 2px;
 }
 
-#edit {
+.btn-edit {
   padding: 2px;
 }
 

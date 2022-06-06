@@ -27,16 +27,22 @@
             alt="Ícone do tema"
           />
         </section>
-        <button class="todo__add">
-          <img src="assets/btn-add.png" alt="" />
+        <section class="todo__add">
+          <img
+            class="cursor-pointer"
+            id="btnAdd"
+            src="assets/btn-add.png"
+            alt="Ícone de adicionar"
+          />
           <input
             type="text"
-            placeholder="Digite sua nova tarefa aqui"
+            placeholder="Crie uma nova tarefa"
+            class="todo__text all-unset"
             id="adicionar"
           />
-        </button>
+        </section>
 
-        <section id="listaTarefas"></section>
+        <section class="todo__list" id="todo-list"></section>
       </main>
 
       <div id="modal-aviso" class="modal-countainer">

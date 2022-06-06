@@ -8,17 +8,18 @@ const criarTarefa = (tarefa, situacao, indice) => {
 
   div.innerHTML = `
         <input type="checkbox" data-indice=${indice} ${situacao}>
-        <h5> ${tarefa} </h5>
-        <div class="btn">
-        <input id="edit" type="button" value="Editar" data-indice=${indice}>
-        <input id="deny" type="button" value="Excluir" data-indice=${indice}>
+        <h5 class="todo__text cursor-default" > ${tarefa} </h5>
+        <div class="buttons">
+          <input class="btn-edit all-unset" id="edit" type="button" value="Editar" data-indice=${indice}>
+          <input class="btn-deny all-unset" id="deny" type="button" value="Excluir" data-indice=${indice}>
         </div>
     `;
-  document.getElementById("listaTarefas").appendChild(div);
+  document.getElementById("todo-list").appendChild(div);
 };
 
 const adicionar = (e) => {
   const texto = e.target.value;
+  console.log(texto);
 
   if (e.key === "Enter") {
     if (texto != "") {
@@ -34,13 +35,13 @@ const adicionar = (e) => {
 };
 
 const adicionarBtn = (e) => {
-  const texto = document.getElementById("adicionar").value;
+  const texto = document.querySelector(".adicionar").value;
 
   if (texto != "") {
     const banco = receberTarefas();
     banco.push({ tarefa: texto, situacao: "" });
     enviarTarefas(banco);
-    document.getElementById("adicionar").value = "";
+    document.querySelector(".adicionar").value = "";
     atualizar();
   } else {
     iniciaModalAviso("modal-aviso");
@@ -48,7 +49,7 @@ const adicionarBtn = (e) => {
 };
 
 const limpar = () => {
-  const todo = document.getElementById("listaTarefas");
+  const todo = document.querySelector("#todo-list");
   while (todo.firstChild) {
     todo.removeChild(todo.lastChild);
   }
@@ -133,10 +134,8 @@ const iniciaModalEditar = (modalId, texto) => {
   });
 };
 
-document.getElementById("adicionar").addEventListener("keypress", adicionar);
-document.getElementById("btnAdd").addEventListener("click", adicionarBtn);
-document
-  .getElementById("listaTarefas")
-  .addEventListener("click", tarefaClicada);
+document.querySelector("#adicionar").addEventListener("keypress", adicionar);
+document.querySelector("#btnAdd").addEventListener("click", adicionarBtn);
+document.querySelector("#todo-list").addEventListener("click", tarefaClicada);
 
 atualizar();
