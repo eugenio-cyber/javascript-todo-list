@@ -63,17 +63,16 @@ const atualizar = () => {
   );
 };
 
-const tarefaClicada = (e) => {
-  const elemnto = e.target;
+const tarefaClicada = (event) => {
+  const elemento = event.target;
+  const indice = elemento.dataset.indice;
+  let texto = elemento.dataset.indice;
 
-  if (e.target.id === "deny") {
-    const indice = elemnto.dataset.indice;
+  if (elemento.id === "deny") {
     remover(indice);
-  } else if (e.target.type === "checkbox") {
-    const indice = elemnto.dataset.indice;
+  } else if (elemento.type === "checkbox") {
     adicionarItem(indice);
-  } else if (e.target.id === "edit") {
-    let texto = elemnto.dataset.indice;
+  } else if (elemento.id === "edit") {
     iniciaModalEditar("modal-editar", texto);
   }
 };

@@ -45,17 +45,17 @@
         <section class="todo__list" id="todo-list"></section>
       </main>
 
-      <div id="modal-aviso" class="modal-countainer">
-        <div id="modal-aviso-body">
-          <div id="modal-aviso-header">
-            <button id="modal-btn">X</button>
+      <div id="modal-aviso" class="modal">
+        <div class="modal__aviso">
+          <div class="modal__header">
+            <button id="modal-btn" class="all-unset cursor-pointer">X</button>
           </div>
           <span>Você não digitou a tarefa</span>
         </div>
       </div>
 
-      <div id="modal-editar" class="modal-countainer">
-        <div id="modal-editar-body">
+      <div id="modal-editar" class="modal">
+        <div id="modal-editar-body" class="modal__editar">
           <span>Digite o novo nome para a tarefa:</span>
           <input type="text" id="modal-editar-input" />
           <div id="modal-editar-btn">
