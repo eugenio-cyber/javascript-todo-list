@@ -50,17 +50,32 @@
           <div class="modal__header">
             <button id="modal-btn" class="all-unset cursor-pointer">X</button>
           </div>
-          <span>Você não digitou a tarefa</span>
+          <h2 class="modal__title">Você não digitou a tarefa</h2>
         </div>
       </div>
 
       <div id="modal-editar" class="modal">
         <div id="modal-editar-body" class="modal__editar">
-          <span>Digite o novo nome para a tarefa:</span>
-          <input type="text" id="modal-editar-input" />
-          <div id="modal-editar-btn">
-            <button id="modal-btn-confirm">Ok</button>
-            <button id="modal-btn-deny">Cancelar</button>
+          <h3 class="modal__title">Digite o novo nome para a tarefa:</h3>
+          <input
+            type="text"
+            class="modal__input all-unset"
+            id="modal-editar-input"
+            placeholder="Ex: estudar nodejs"
+          />
+          <div class="modal__btn">
+            <button
+              class="modal__btn--confirm all-unset cursor-pointer"
+              id="modal-btn-confirm"
+            >
+              Ok
+            </button>
+            <button
+              class="modal__btn--deny all-unset cursor-pointer"
+              id="modal-btn-deny"
+            >
+              Cancelar
+            </button>
           </div>
         </div>
       </div>

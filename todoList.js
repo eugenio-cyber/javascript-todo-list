@@ -19,7 +19,6 @@ const criarTarefa = (tarefa, situacao, indice) => {
 
 const adicionar = (e) => {
   const texto = e.target.value;
-  console.log(texto);
 
   if (e.key === "Enter") {
     if (texto != "") {
