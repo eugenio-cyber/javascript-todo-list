@@ -8,8 +8,8 @@
   --txt: #484749;
   --bg-white-card: #fafafa;
   --bg-white-page: #ffffff;
-  --bg-dark-page: #161722;
-  --bg-dark-card: #25273c;
+  --primary-color: #161722;
+  --secondary-color: #25273c;
 }
 
 .all-unset {
@@ -135,6 +135,30 @@ input[type="button"] {
   text-decoration: line-through;
 }
 
+.btn-deny,
+.btn-edit {
+  padding: 4px;
+  border-radius: 3px;
+
+  font-weight: 400;
+  font-size: 20px;
+
+  color: #ffffff;
+}
+
+.btn-edit {
+  background: var(--secondary-color);
+}
+
+.btn-deny {
+  background: var(--secondary-color);
+}
+
+.btn-edit:hover,
+.btn-deny:hover {
+  opacity: 0.6;
+}
+
 .modal {
   position: fixed;
   top: 0px;
@@ -218,7 +242,7 @@ input[type="button"] {
 
   color: var(--bg-white-card);
 
-  background: var(--bg-dark-card);
+  background: var(--secondary-color);
 }
 
 .modal__btn--deny {
@@ -227,7 +251,7 @@ input[type="button"] {
 
   color: var(--bg-white-card);
 
-  background: var(--bg-dark-card);
+  background: var(--secondary-color);
 }
 
 @keyframes modalAviso {
