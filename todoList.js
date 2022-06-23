@@ -34,13 +34,13 @@ const adicionar = (e) => {
 };
 
 const adicionarBtn = (e) => {
-  const texto = document.querySelector(".adicionar").value;
+  const texto = document.querySelector("#adicionar").value;
 
   if (texto != "") {
     const banco = receberTarefas();
     banco.push({ tarefa: texto, situacao: "" });
     enviarTarefas(banco);
-    document.querySelector(".adicionar").value = "";
+    document.querySelector("#adicionar").value = "";
     atualizar();
   } else {
     iniciaModalAviso("modal-aviso");
