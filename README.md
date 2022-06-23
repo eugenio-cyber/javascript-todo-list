@@ -10,7 +10,7 @@
 
 ## 🔗 Quer acessar o projeto?
 
-[Clique aqui para ver]()
+[Clique aqui para ver](https://todo-list-virid-nine.vercel.app/)
 
 ## 🏹 Qual o objetivo do projeto?
 
