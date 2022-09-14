@@ -14,11 +14,11 @@
 
 ## 🏹 Qual o objetivo do projeto?
 
-Em desenvolvimento.
+Desenvolver uma aplicação capaz de criar, editar, excluir e listar as tarefas do usuário.Também é uma oportunidade de treinar meu domínio em JavaScript e manipulação da DOM.
 
 ## 💻 Como usar?
 
-Em desenvolvimento.
+Depois de clicar no link a cima e se redirecionado para a página você poderá digitar sua tarefa no campo que está escrito "Crie uma nova tarefa" e precionar a tecla Enter ou clicar no botão com o símbolo de mais (+). A partir daí você ser
 
 ## 🛠️ Ferramentas utilizadas?
 
