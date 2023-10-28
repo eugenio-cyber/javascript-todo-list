@@ -1,8 +1,7 @@
 <h3 align="center">
  Todo-List
 </h3>
-  
-<br>
+
 <p align="center">
 <img src="https://img.shields.io/badge/status-concluido-green?style=for-the-badge"/>
 </p>
@@ -14,7 +13,7 @@
 
 ## 🏹 Qual o objetivo do projeto?
 
-Desenvolver uma aplicação capaz de criar, editar, excluir e listar as tarefas do usuário.Também é uma oportunidade de treinar meu domínio em JavaScript e manipulação da DOM.
+Desenvolver uma aplicação capaz de criar, editar, excluir e listar as tarefas do usuário. Uma oportunidade de treinar meu domínio em JavaScript e manipulação da DOM.
 
 ## 💻 Como usar?
 
